@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モテ期襲来素材生成ツール</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+</head>
+
+<body>
+    <h1>『探索者、モテ期襲来』<br />
+        素材生成ツール</h1>
+    <hr>
+    <div class="block">
+        <h2>本ツールについて</h2>
+        <p>
+            ・本ツールはクトゥルフ神話TRPG非公式シナリオ『探索者、モテ期襲来』のトレーラーに探索者の名前を追加することを想定しています。<br />
+            ・『探索者、モテ期襲来』の有償頒布中の「セッション用素材」や好きな画像に文字を追加することができます。<br />
+            ・文字の位置やフォントを変更することはできません。
+        </p>
+        <h2>注意事項</h2>
+        <p>
+            本ツールを利用する前に、以下の注意事項をよくお読みください。<br />
+            1.サービスの提供<br />
+            　本サービスは、予告なく中止または終了する場合があります。<br />
+            2.画像の利用について<br />
+            　本サービスによって生成された画像について、ココフォリアの部屋素材やSNSなどへの投稿に利用することができます。ただし、商用目的での利用は禁止されています。<br />
+        </p>
+        <h2>『探索者、モテ期襲来』シナリオ頒布サイト</h2>
+        <ul>
+            <li>
+                <a href="https://booth.pm/ja/items/4135966">BOOTH</a>
+            </li>
+            <li>
+                <a href="https://talto.cc/projects/8D6pFTN0eRjna5PYlJnBG">TALTO(現代版)</a>
+            </li>
+            <li>
+                <a href="https://talto.cc/projects/PgYHsaJzuWWyWZh_LLU4m">TALTO(大正版)</a>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="block">
+        <h2>現代版トレーラー</h2>
+        <p>
+            手順１：画像ファイルを選択する
+        </p>
+        <input type="file" id="gendaiImageInput">
+        <p class="errorText" id="gendaiFileErrorMessage"></p>
+        <p>
+            手順２：探索者の名前を入力する
+        </p>
+        <div class="inputAndButtonContainer">
+            <input type="text" id="gendaiNameInput" placeholder="名前を入力">
+            <button id="gendaiNameInputButton">反映する</button>
+            <div class="loadingContainer hide" id="gendaiCoverLoading">
+                <div class="loader"></div>
+                <p class="loadText">フォント読み込み中</p>
+            </div>
+        </div>
+        <p>
+            手順3：以下の画像を保存する<br />
+            【PCの場合】以下の画像を右クリックして、表示されるメニューから「名前をつけて画像を保存」を選択する。<br />
+            【スマートフォンの場合】以下の画像を長押しして、表示されるメニューから「画像を保存」を選択する。
+        </p>
+        <canvas class="coverCanvas hide" id="gendaiDownloadCanvas" width="1600px" height="1000px">
+        </canvas>
+        <img class="coverImg" id="gendaiCanvasImage" alt="モテ期トレーラー現代版">
+    </div>
+    <hr />
+    <div class="block">
+        <h2>大正版トレーラー</h2>
+        <p>
+            手順１：画像ファイルを選択する
+        </p>
+        <input type="file" id="taisyoImageInput">
+        <p class="errorText" id="taisyoFileErrorMessage"></p>
+        <p>
+            手順２：探索者の名前を入力する
+        </p>
+        <div class="inputAndButtonContainer">
+            <input type="text" id="taisyoNameInput" placeholder="名前を入力">
+            <button id="taisyoNameInputButton">反映する</button>
+            <div class="loadingContainer hide" id="taisyoCoverLoading">
+                <div class="loader"></div>
+                <p class="loadText">フォント読み込み中</p>
+            </div>
+        </div>
+        <p>
+            手順3：以下の画像を保存する<br />
+            【PCの場合】以下の画像を右クリックして、表示されるメニューから「名前をつけて画像を保存」を選択する。<br />
+            【スマートフォンの場合】以下の画像を長押しして、表示されるメニューから「画像を保存」を選択する。
+        </p>
+        <canvas class="coverCanvas hide" id="taisyoDownloadCanvas" width="1600px" height="1000px">
+        </canvas>
+        <img class="coverImg" id="taisyoCanvasImage">
+    </div>
+    <hr>
+    <footer>
+        本作は、「 株式会社アークライト 」及び「株式会社KADOKAWA」が権利を有する『クトゥルフ神話TRPG』の二次創作物です。<br />
+        <br />
+        Call of Cthulhu is copyright ©1981, 2015, 2019 by Chaosium Inc. ;all rights reserved. Arranged by Arclight Inc.
+        Call of Cthulhu is a registered trademark of Chaosium Inc.
+        PUBLISHED BY KADOKAWA CORPORATION　「クトゥルフ神話TRPG」
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
