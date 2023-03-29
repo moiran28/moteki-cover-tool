@@ -81,10 +81,9 @@ class StageEx extends createjs.Stage {
         image.src = imageData;
         image.onload = () => {
             this.background = new createjs.Bitmap(image);
-
         };
         image.onerror = () => {
-            setErrorText(IMAGE_ERROR);
+            setErrorText("画像の読み込みに失敗しました。");
         };
     }
     setTmpBackgroud() {
@@ -328,7 +327,11 @@ async function fontLoad(fontToUpdate, stageUsingFont, loadingAnimation) {
  */
 function initFileInput(fileInput, stageToUpdate, fileErrorMessage) {
     fileInput.addEventListener('change', (e) => {
-        if (fileInput.files.length > 0 && fileInput.files[0].type === "image/png") {
+        if (fileInput.files.length < 1) {
+            stageToUpdate.setTmpBackgroud();
+            return;
+        }
+        if (fileInput.files[0].type === "image/png") {
             const fileReader = new FileReader();
             fileReader.onload = () => {
                 fileErrorMessage.textContent = '';
