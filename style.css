@@ -38,12 +38,6 @@ a {
     margin: 0 0 0px;
 }
 
-a[href]:after {
-    content: " (" attr(href) ")";
-    font-size: 12px;
-    color: #999;
-}
-
 a[href]:hover {
     text-decoration: underline;
     color: #c0392b;
@@ -221,10 +215,6 @@ footer {
 
     a {
         font-size: 16px;
-    }
-
-    a[href]:after {
-        display: none;
     }
 
     input[type="text"],
